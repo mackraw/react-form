@@ -1,0 +1,191 @@
+.overlay
+  position: fixed
+  opacity: 0
+  visibility: hidden
+  background: hsla(0, 0%, 0%, 0.5)
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  height: 100%
+  transition: $tr
+
+.form
+  position: fixed
+  opacity: 0
+  visibility: hidden
+  top: 50%
+  left: 50%
+  transform: translateX(-50%) translateY(-50%)
+  background: $clr-white
+  color: $clr-black
+  border-radius: 0.5em
+  padding: 3rem
+  width: 95%
+  max-width: 500px
+  box-shadow: 0 0.5em 2em $clr-shadow
+  transition: $tr
+
+.btn
+  padding: 1em 2em
+  border-radius: 0.5em
+  border-color: $clr-primary
+  border-width: 0.25em
+  background-color: $clr-primary
+  color: $clr-white
+  border-style: solid
+  font-family: inherit
+  font-weight: 600
+  text-transform: uppercase
+  letter-spacing: 0.05em
+  box-shadow: 0 0.5em 2em $clr-shadow
+  transition: all 150ms ease-in-out
+  &:hover
+    transform: scale(1.05)
+    background-color: $clr-white
+    color: $clr-primary
+    cursor: pointer
+    box-shadow: 0 0.5em 4em $clr-shadow
+  &:disabled
+    background-color: $clr-shadow
+    color: $clr-white
+    box-shadow: none
+    border-color: inherit
+    pointer-events: none
+
+.closeBtn
+  position: absolute
+  top: 2rem
+  right: 2rem
+  cursor: pointer
+  border: none
+  .closeBtnIcon
+    width: 1.75em
+    height: 1.75em
+    fill: $clr-shadow
+    transition: $tr
+    &:hover
+      fill: $clr-gray
+.buttonsWrapper
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-evenly
+.formContent
+  margin-bottom: 3rem
+.title
+  color: $clr-black
+  font-size: 1.5em
+  font-weight: 600
+  text-align: center
+  margin-bottom: 2rem
+.list
+.item
+  line-height: 1.4
+  font-size: 1.2em
+.label:hover
+  cursor: pointer
+  & input ~ .customCheckbox
+    background-color: $clr-primary-medium
+.price
+  font-size: 0.8em
+  color: $clr-gray
+.errorMsg
+  color: $clr-red
+  text-align: center
+  padding-top: 1em
+
+.checkboxWrapper
+  position: relative
+  display: inline-block
+  width: 1em
+  height: 1em
+  user-select: none
+  margin-right: 0.5em
+  vertical-align: middle
+  & input
+    position: absolute
+    opacity: 0
+    height: 0
+    width: 0
+    &:checked ~ .customCheckbox
+      background-color: $clr-primary
+      &:after
+        display: block
+  & .customCheckbox:after
+    left: 30%
+    top: 5%
+    width: 40%
+    height: 70%
+    border: solid $clr-white
+    border-width: 0 0.2em 0.2em 0
+    border-radius: 0.15em
+    transform: rotate(45deg)
+
+.customCheckbox
+  position: absolute
+  top: 0
+  left: 0
+  height: 100%
+  width: 100%
+  background-color: $clr-primary-light
+  border-radius: 0.25em
+  cursor: pointer
+  &:hover
+    background-color: $clr-primary-medium
+  &:after
+    content: ""
+    position: absolute
+    display: none
+
+.required
+  color: $clr-gray
+  font-size: 0.8em
+  margin-bottom: 1.25em
+
+.inputItem
+  display: flex
+  flex-flow: column nowrap
+  justify-content: flex-start
+  margin-bottom: 1.25em
+  .inputName
+    font-weight: 600
+    margin-bottom: 0.35em
+  .inputBox
+    padding: 0.5em
+    font-size: 0.9em
+    font-family: Roboto, sans-serif
+    border: 1px solid $clr-gray
+    border-radius: 0.3em
+    &:focus
+      outline: 1px solid $clr-primary
+  .errorMsg
+    font-size: 0.8em
+    text-align: left
+    padding-top: 0.25em
+
+.message
+  line-height: 1.6
+  margin: 2em 0
+.center
+  text-align: center
+.info
+  max-width: 60ch
+  margin: 3rem auto
+  line-height: 1.6
+  text-align: center
+.code, code
+  font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Monospace", "Courier New", monospace
+  background: $clr-gray-light
+  padding: 0.5em
+  border-radius: 0.25em
+code
+  padding: 0.1em
+
+.isModalShowing
+  visibility: visible
+  opacity: 1
+  // z-index: 11
+.isOverlayShowing
+  opacity: 1
+  // z-index: 9
+  visibility: visible
